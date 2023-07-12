@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import { AppContext } from "./context/contextApi";
 
 const App = () => {
   return (
-    <div className='text-red-500'>App</div>
-  )
-}
+    <AppContext>
+      <div className="text-red-500">App</div>
+    </AppContext>
+  );
+};
 
-export default App
+export default App;
