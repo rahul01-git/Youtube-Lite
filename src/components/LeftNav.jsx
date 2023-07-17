@@ -4,16 +4,16 @@ import LeftNavMenuItem from "./LeftNavMenuItem";
 import { categories } from "../utils/constants";
 import { Context } from "../context/contextApi";
 const LeftNav = () => {
-  const { selectCategories, setSelectCategories, mobileMenu } =
+  const { selectCategories, setSelectedCategory, mobileMenu } =
     useContext(Context);
     const navigate = useNavigate()
 
   const clickHandler = (name, type) => {
     switch (type) {
       case "category":
-        return setSelectCategories(name);
+        return setSelectedCategory(name);
       case "home":
-        return setSelectCategories(name);
+        return setSelectedCategory(name);
       case "menu":
         return false;
       default:
@@ -25,7 +25,7 @@ const LeftNav = () => {
       <div className="flex px-5 flex-col">
         {categories.map((item) => {
           return (
-            <React.Fragment>
+            <React.Fragment key={item.name}>
               <LeftNavMenuItem
                 text={item.type === "home" ? "Home" : item.name}
                 icon={item.icon}
