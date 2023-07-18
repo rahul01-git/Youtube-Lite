@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 
 import { Context } from "../context/contextApi";
 import LeftNav from "./LeftNav";
-import VideoCard from "./VideoCard";
+import VideoCardDesign from './VideoCardDesign'
 
 const Feed = () => {
   const { loading, searchResults } = useContext(Context);
@@ -20,7 +20,7 @@ const Feed = () => {
             searchResults.map((item) => {
               if (item.type !== "video") return false;
               return (
-                <VideoCard key={item?.video?.videoId} video={item?.video} />
+                <VideoCardDesign key={item?.video?.videoId} video={item?.video} />
               );
             })}
         </div>

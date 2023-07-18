@@ -5,7 +5,7 @@ import { BsFillCheckCircleFill } from "react-icons/bs";
 
 import VideoLength from "../shared/videoLength";
 
-const VideoCard = ({ video }) => {
+const VideoCardDesign = ({ video }) => {
     return (
         <Link to={`/video/${video?.videoId}`}>
             <div className="flex flex-col mb-8">
@@ -57,4 +57,4 @@ const VideoCard = ({ video }) => {
     );
 };
 
-export default VideoCard;
+export default VideoCardDesign;
