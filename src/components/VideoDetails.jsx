@@ -18,8 +18,8 @@ const VideoDetails = () => {
 
   useEffect(() => {
     document.getElementById("root").classList.add("custom-h");
-    fetchVideoDetails();
-    fetchRelatedVideos();
+    // fetchVideoDetails();
+    // fetchRelatedVideos();
   }, [id]);
   const fetchVideoDetails = () => {
     setLoading(true);
@@ -51,6 +51,7 @@ const VideoDetails = () => {
               controls
               width="100%"
               height="100%"
+              autoPlay
               style={{ backgroundColor: "#000000" }}
             />
           </div>
@@ -98,7 +99,7 @@ const VideoDetails = () => {
           </div>
         </div>
 
-        <div className="flex flex-col py-6 px-4 overflow-y-auto lg:w-[350px] xl:w-[400px]">
+        <div className="flex flex-col py-6 px-4 overflow-y-scroll lg:w-[350px] xl:w-[400px]">
           {relatedVideos?.contents?.map((item,index)=>{
             if(item.type !== 'video') return false
             return (
