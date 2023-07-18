@@ -18,8 +18,8 @@ const VideoDetails = () => {
 
   useEffect(() => {
     document.getElementById("root").classList.add("custom-h");
-    // fetchVideoDetails();
-    // fetchRelatedVideos();
+    fetchVideoDetails();
+    fetchRelatedVideos();
   }, [id]);
   const fetchVideoDetails = () => {
     setLoading(true);
@@ -51,7 +51,7 @@ const VideoDetails = () => {
               controls
               width="100%"
               height="100%"
-              autoPlay
+              playing={true}
               style={{ backgroundColor: "#000000" }}
             />
           </div>
